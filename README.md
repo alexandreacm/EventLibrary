@@ -1,21 +1,21 @@
-# react-native-eventlibrary
+# eventlib
 
-event library
+Event Library
 
 ## Installation
 
 ```sh
-npm install react-native-eventlibrary
+npm install eventlibrary
 ```
 
 ## Usage
 
 ```js
-import { multiply } from "react-native-eventlibrary";
+import { onCustomEvent } from "eventlibrary";
 
 // ...
 
-const result = await multiply(3, 7);
+const result = await onCustomEvent();
 ```
 
 ## Contributing
