@@ -1,14 +1,10 @@
 package com.reactnativeeventlibrary;
 
-import androidx.annotation.NonNull;
-
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.module.annotations.ReactModule;
 
-@ReactModule(name = EventlibraryModule.NAME)
 public class EventlibraryModule extends ReactContextBaseJavaModule {
     public static final String NAME = "Eventlibrary";
 
@@ -17,18 +13,22 @@ public class EventlibraryModule extends ReactContextBaseJavaModule {
     }
 
     @Override
-    @NonNull
     public String getName() {
         return NAME;
     }
 
-
-    // Example method
-    // See https://reactnative.dev/docs/native-modules-android
     @ReactMethod
-    public void multiply(int a, int b, Promise promise) {
-        promise.resolve(a * b);
-    }
+    public void onMyEvent(String appName,Promise promise) {
+      /* Create two objects using constructor */
+      Employee empOne = new Employee("Alexandre Marques");
 
-    public static native int nativeMultiply(int a, int b);
+      // Invoking methods for each object created
+      empOne.setAge(41);
+      empOne.setDesignation("Senior Software Engineer");
+      empOne.setSalary(5500);
+
+      empOne.printEmployee();
+
+      promise.resolve(appName +  empOne.getName());
+    }
 }
