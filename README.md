@@ -11,11 +11,11 @@ npm install eventlibrary
 ## Usage
 
 ```js
-import { onCustomEvent } from "eventlibrary";
+import { onMyEvent } from "eventlibrary";
 
 // ...
 
-const result = await onCustomEvent();
+const result = await onMyEvent(appName);
 ```
 
 ## Contributing
